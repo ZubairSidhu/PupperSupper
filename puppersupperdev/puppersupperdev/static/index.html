@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <style>
+      html {
+  min-height: 100%;
+}
+
+body {
+  font-family: "IBM Plex Serif"; font-size: 16px;
+  margin: 2em;
+  background-image: linear-gradient(to bottom, #07BFEA 0%, #FFF 100%);
+  background-repeat: no-repeat;
+  min-height: 100%;
+}
+
+video {
+  width: 100%    !important;
+  height: auto   !important;
+}
+
+canvas {
+  width: 100%    !important;
+  height: auto   !important;
+}
+
+p.big {
+  font-family: "IBM Plex Mono";
+  font-size: 30px;
+  font-weight: bold;
+  
+}
+
+ .button {
+  background-color: black;
+  color: white;
+  margin: 20px;
+  padding: 20px;
+}
+
+a:link, a:visited {
+  background-color: MediumBlue;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+
+a:hover, a:active {
+  background-color: DarkBlue;
+}
+
+#header {
+    font-family: "Bungee Shade";font-size: 40px;
+}
+
+.center {
+  margin: auto;
+  width: 50%;
+  padding: 10px;
+}
+
+.mediaDiv {
+  margin: auto;
+  width: 100%;
+  padding: 0px;
+}
+
+    </style>
+    <link href="https://fonts.googleapis.com/css?family=IBM Plex Mono" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css?family=Bungee Shade" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css?family=IBM Plex Serif" rel="stylesheet">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+  </head>
+  
+    <!--I will use CSS later, and I just did -->
+
+  <body>
+
+    <h1 align="center" id="header"><strong>Welcome to Pupper Supper!</strong></h1>
+    <br>
+
+    <p align="center" class="big">
+      Slo Hacks 2019
+    </p>
+
+    <div class="mediaDiv">
+    <video id="video" width="680" height="480" autoplay style="border-style: solid;"></video>
+    <button id="snap">Snap Photo</button>
+    </div>
+
+    <div class="mediaDiv">
+    <canvas id="canvas" width="1200" height="1200" style="border-style: solid;"></canvas>
+    </div>
+
+    <div id="sideEffects">
+      Results Will Show here
+    </div>
+
+{% load staticfiles %}
+<script src="{% static "js/camera.js" %}"></script>
+
+<!-- <script type="text/javascript" >
+// Grab elements, create settings, etc.
+var video = document.getElementById('video');
+
+// Get access to the camera!
+if(navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+    // Not adding `{ audio: true }` since we only want video now
+    navigator.mediaDevices.getUserMedia({ video: true }).then(function(stream) {
+        //video.src = window.URL.createObjectURL(stream);
+        video.srcObject = stream;
+        video.play();
+    });
+}
+
+// Elements for taking the snapshot
+var canvas = document.getElementById('canvas');
+var context = canvas.getContext('2d');
+var video = document.getElementById('video');
+
+// Trigger photo take
+document.getElementById("snap").addEventListener("click", function() {
+  context.drawImage(video, 0, 0, 640, 480);
+});
+
+</script> -->
+
+  <div class="center">
+    <a href="index/" class="bowl" style = "margin-left:40%">
+      <p>
+        Click to scan Item
+      </p>
+    </a>
+  </div class="center"> 
+
+    
+  </body>
+</html>
